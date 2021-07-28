@@ -1,16 +1,111 @@
+@font-face {
+  font-family: 'Header';
+  src: url('/src/header.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
 
 .hello {
-    color: red;
+  color: red;
+  /* background: url('./bowser.png') 100px; */
   }
 
-body{
-    background: url('./castleBG.png') no-repeat center center fixed;
-    /* background-repeat:no-repeat; */
-    /* background-position: center center; */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: rgba(255,255,255,0.1);
-    background-blend-mode: lighten;
+  body html{
+    position: relative;
+    min-height: 100%;
+  }
+
+#content{
+  background: url('./castleBG.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: rgba(255,255,255,0.1);
+  background-blend-mode: lighten;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  min-height: 100%;
+  left: 0; right: 0; top:0;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background-color: rgba(255, 0, 0, 0.4);
+  z-index: 9;
+}
+
+ul {
+  list-style: none;
+  
+}
+
+li {
+  display: inline;
+  background-color: rgb(226, 110, 33);
+  padding: 0.5rem;
+  /* color: black; */
+
+}
+
+li a{
+  text-decoration: none;
+  color: black;
+}
+
+header h1{
+  font-size: 5rem;
+  font-family: 'Header';
+}
+
+section{
+  padding: 5rem;
+  background-color: chartreuse;
+  /* position: absolute; */
+  /* left: 20rem; right: 20rem; */
+  margin: 1rem;
+  width: 40%;
+  align-items: center;
+  border-radius: 1rem;
+  border: 5pt solid yellow;
+
+}
+
+section:first-of-type{
+  /* background-color: red; */
+  margin-top: 5rem;
+}
+
+section:last-of-type{
+  /* background-color: red; */
+  margin-bottom: 5rem;
+}
+
+header{
+  text-align: center;
+  margin-bottom: 10rem; 
+}
+
+#bowser{
+  height: 150px;
+}
+
+footer{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  background-color: orange;
+  /* height: 50px; */
+  bottom: 0; left: 0; right: 0;
+  padding: 1rem;
 }
