@@ -1,0 +1,16 @@
+
+.hello {
+    color: red;
+  }
+
+body{
+    background: url('./castleBG.png') no-repeat center center fixed;
+    /* background-repeat:no-repeat; */
+    /* background-position: center center; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.1);
+    background-blend-mode: lighten;
+}
