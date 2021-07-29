@@ -1,25 +1,24 @@
-export const homePage = (function() {
-    'use strict';
-  
-    var _privateProperty = 'Hello World';
-    var publicProperty = 'I am a public property';
-  
-    function _privateMethod() {
-      console.log(_privateProperty);
-    }
-  
-    function publicMethod() {
-      _privateMethod();
-    }
-  
-    return {
-      publicMethod,
-      publicProperty
-    };
-  })();
 
-// homePage.publicMethod(); // outputs 'Hello World'
-// console.log(homePage.publicProperty); // outputs 'I am a public property'
-//console.log(homePage._privateProperty); // is undefined protected by the module closure
-//homePage._privateMethod(); // is TypeError protected by the module closure
+function createHome(){
 
+  const home = document.createElement('section');
+
+  const bowserImage = document.createElement('img');
+  bowserImage.src = '../src/images/bowser.png';
+  bowserImage.alt = 'Bowser';
+  bowserImage.id = 'bowserImage';
+  // bowserImage.height = '250px';
+
+  const p1 = document.createElement('p'); p1.textContent = 'The best breakfast in town!';
+  const p2 = document.createElement('p'); p2.textContent = 'Come on by and see what Bowser has been up to.';
+  const p3 = document.createElement('p'); p3.textContent = 'Order online or visit us!';
+
+  home.appendChild(p1);
+  home.appendChild(bowserImage);
+  home.appendChild(p2);
+  home.appendChild(p3);
+
+  return home;
+}
+
+export default createHome;

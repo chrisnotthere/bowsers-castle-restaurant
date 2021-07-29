@@ -5,55 +5,58 @@
   font-style: normal;
 }
 
-.hello {
-  color: red;
-  /* background: url('./bowser.png') 100px; */
-  }
+:root{
+  --main-banner-color: rgba(245, 122, 22, 0.9);
+  --section-color: rgba(251, 255, 0, 0.75);
+  --menu-link-color: rgba(248, 156, 17, 0.9);
+  --alt-menu-link-color: rgb(255, 0, 0);
+  --card-color: rgba(255, 217, 0, 0.75);
+  --alt-card-color: rgba(224, 218, 181, 0.637);
+}
 
-  body html{
-    position: relative;
-    min-height: 100%;
-  }
+body html{
+  position: relative;
+  min-height: 100%;
+}
 
 #content{
-  background: url('./castleBG.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: url('../src/images/castleBG.png') no-repeat center center fixed;
   background-size: cover;
-  background-color: rgba(255,255,255,0.1);
-  background-blend-mode: lighten;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   min-height: 100%;
   left: 0; right: 0; top:0;
-
 }
 
 nav {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+  justify-content:flex-end;
   position: absolute;
-  top: 0; left: 0; right: 0;
-  background-color: rgba(255, 0, 0, 0.4);
-  z-index: 9;
+  top: 1rem; 
+  left: 0; right: 0;
+  height: 13rem;
+  background-color: var(--main-banner-color);
+
 }
 
 ul {
   list-style: none;
-  
 }
 
 li {
   display: inline;
-  background-color: rgb(226, 110, 33);
+  background-color: var(--menu-link-color);
   padding: 0.5rem;
-  /* color: black; */
+  margin: 0.2rem;
+}
 
+li:hover, li.active {
+  background-color: var(--alt-menu-link-color);
+  padding: 0.7rem;
+  cursor: pointer;
 }
 
 li a{
@@ -68,25 +71,31 @@ header h1{
 
 section{
   padding: 5rem;
-  background-color: chartreuse;
-  /* position: absolute; */
-  /* left: 20rem; right: 20rem; */
+  background-color: var(--section-color);
   margin: 1rem;
-  width: 40%;
+  width: 50%;
   align-items: center;
   border-radius: 1rem;
   border: 5pt solid yellow;
-
-}
-
-section:first-of-type{
-  /* background-color: red; */
+  text-align: center;
   margin-top: 5rem;
 }
 
-section:last-of-type{
-  /* background-color: red; */
-  margin-bottom: 5rem;
+section#menu{
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 5rem;
+  background-color: var(--section-color);
+  margin: 1rem;
+  width: 50%;
+  align-items: center;
+  border-radius: 1rem;
+  border: 5pt solid var(--alt-menu-link-color);
+  text-align: center;
+  margin-top: 5rem;
 }
 
 header{
@@ -104,8 +113,32 @@ footer{
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  background-color: orange;
-  /* height: 50px; */
+  background-color: var(--main-banner-color);
   bottom: 0; left: 0; right: 0;
   padding: 1rem;
+}
+
+#bowserImage{
+  height: 150px;
+}
+
+/* menu cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 30%;
+  /* max-height: 100px; */
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--card-color);
+}
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: var(--alt-card-color);
+}
+
+.container {
+  padding: 2px 16px;
 }
