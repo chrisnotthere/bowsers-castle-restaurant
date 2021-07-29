@@ -12,6 +12,7 @@
   --alt-menu-link-color: rgb(255, 0, 0);
   --card-color: rgba(255, 217, 0, 0.75);
   --alt-card-color: rgba(224, 218, 181, 0.637);
+  
 }
 
 body html{
@@ -78,7 +79,8 @@ section{
   border-radius: 1rem;
   border: 5pt solid yellow;
   text-align: center;
-  margin-top: 5rem;
+  margin: 5rem;
+  margin-bottom: 5rem;
 }
 
 section#menu{
@@ -96,6 +98,19 @@ section#menu{
   border: 5pt solid var(--alt-menu-link-color);
   text-align: center;
   margin-top: 5rem;
+}
+
+section#contact{
+  padding: 5rem;
+  background-color: var(--section-color);
+  margin: 1rem;
+  width: 50%;
+  align-items: center;
+  border-radius: 1rem;
+  border: 5pt solid black;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 header{

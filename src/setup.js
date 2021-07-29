@@ -1,9 +1,9 @@
 import './style.css';
-//import './home';
-//import './menu';
-
-import createHome, { homePage } from './home.js';
+import createHome from './home.js';
 import createMenu from './menu.js';
+import createContact from './contact.js';
+import loadHome from './home.js';
+
 
 
 function createHeader(){
@@ -23,7 +23,13 @@ function createHeader(){
     li2.append(a2); a2.innerText = 'Menu';
     li3.append(a3); a3.innerText = 'Contact';
 
-    li1.addEventListener('click', function() {alert('home')});
+    // li1.addEventListener('click', (e) => {
+    //     if(e.target.classList.contains('active'))
+    //         return;
+    //     setActivePage(li1);
+    //     loadHome();
+    // });
+
     li2.addEventListener('click', function() {alert('menu')});
     li3.addEventListener('click', function() {alert('contact')});
     
@@ -58,10 +64,26 @@ function loadWebsite(){
 
     content.appendChild(createHeader());
     content.appendChild(createHome());
-    content.appendChild(createMenu());
+    // content.appendChild(loadHome());
+    // content.appendChild(createMenu());
+    //content.appendChild(createContact());
     content.appendChild(createFooter());
 
 }
+
+function setActivePage(button){
+    const buttons = document.querySelectorAll('li');
+
+    buttons.forEach((button) => {
+
+        if(button !== this){
+            button.classList.remove('active');
+        }
+    })
+
+    button.classList.add('active');
+}
+
 
 export default loadWebsite;
 

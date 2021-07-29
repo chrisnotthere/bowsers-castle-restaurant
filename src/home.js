@@ -1,5 +1,5 @@
 
-function createHome(){
+export function createHome(){
 
   const home = document.createElement('section');
 
@@ -21,4 +21,13 @@ function createHome(){
   return home;
 }
 
-export default createHome;
+export function loadHome(){
+  const content = document.getElementById('content');
+
+  //const section1 = document.querySelectorAll('section');
+  //content.textContent = '';
+  //content.removeChild(section1);
+  content.appendChild(createHome());
+}
+
+// export default loadHome;
