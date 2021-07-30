@@ -1,3 +1,9 @@
-import loadWebsite from './setup';
+import './style.css';
+import loadHome from './home.js';
 
-loadWebsite();
+function initializeWebsite(){
+    const content = document.querySelector('div[id="content"]');
+    content.appendChild(loadHome());
+}
+
+initializeWebsite();

@@ -1,13 +1,10 @@
 import {createHeader, createFooter} from './footer-header'
 
 function createMenu(){
-
     const menu = document.createElement('section');
     menu.id = 'menu';
     const div1 = document.createElement('div');
-
     menu.appendChild(div1);
-
 
     function createCard(name, description, image){
 
@@ -15,10 +12,9 @@ function createMenu(){
         card.classList.add('card');
 
         const cardImage = document.createElement('img');
-        cardImage.src = `../src/images/${image}`;
+        cardImage.src = `../dist/images/${image}`;
         cardImage.alt = name;
         cardImage.style.width = '100%';
-
 
         const cardName = document.createElement('h4')
         cardName.textContent = name;
@@ -53,19 +49,15 @@ function createMenu(){
     menu.appendChild(createCard('Omelette', 'Spinach, mushroom, basil pesto, avacodo, brie', 'omlette.jpg'));
 
     return menu;
-
 }
 
 function loadMenu(){
-
     const content = document.querySelector('div[id="content"]');
     content.innerHTML = '';
 
     content.appendChild(createHeader());
     content.appendChild(createMenu());
     content.appendChild(createFooter());
-
 }
 
 export default loadMenu;
-

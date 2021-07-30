@@ -1,15 +1,12 @@
 import {createHeader, createFooter} from './footer-header'
 
-//creates HOME section
 function createHome(){
-
   const home = document.createElement('section');
 
   const bowserImage = document.createElement('img');
-  bowserImage.src = '../src/images/bowser.png';
+  bowserImage.src = '../dist/images/bowser.png';
   bowserImage.alt = 'Bowser';
   bowserImage.id = 'bowserImage';
-  // bowserImage.height = '250px';
 
   const p1 = document.createElement('p'); p1.textContent = 'The best breakfast in town!';
   const p2 = document.createElement('p'); p2.textContent = 'Come on by and see what Bowser has been up to.';
@@ -30,16 +27,13 @@ function createHome(){
   return home;
 }
 
-//loads full page with HOME section
 export function loadHome(){
-
   const content = document.querySelector('div[id="content"]');
   content.innerHTML = '';
 
   content.appendChild(createHeader());
   content.appendChild(createHome());
   content.appendChild(createFooter());
-
 }
 
 export default loadHome;
