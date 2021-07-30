@@ -1,3 +1,5 @@
+import {createHeader, createFooter} from './footer-header'
+
 function createMenu(){
 
     const menu = document.createElement('section');
@@ -33,6 +35,13 @@ function createMenu(){
         card.appendChild(cardImage);
         card.appendChild(container);
 
+        const homeBtn = document.querySelector('li[id="homeBtn"]');
+        const menuBtn = document.querySelector('li[id="menuBtn"]');
+        const contactBtn = document.querySelector('li[id="contactBtn"]');
+        homeBtn.classList.remove('active');
+        menuBtn.classList.add('active');
+        contactBtn.classList.remove('active');
+
         return card;
     }
 
@@ -47,5 +56,16 @@ function createMenu(){
 
 }
 
-export default createMenu;
+function loadMenu(){
+
+    const content = document.querySelector('div[id="content"]');
+    content.innerHTML = '';
+
+    content.appendChild(createHeader());
+    content.appendChild(createMenu());
+    content.appendChild(createFooter());
+
+}
+
+export default loadMenu;
 

@@ -54,7 +54,7 @@ li {
   margin: 0.2rem;
 }
 
-li:hover, li.active {
+li:hover, .active, button:hover {
   background-color: var(--alt-menu-link-color);
   padding: 0.7rem;
   cursor: pointer;
@@ -65,9 +65,20 @@ li a{
   color: black;
 }
 
+button {
+  display: inline;
+  background-color: var(--menu-link-color);
+  padding: 0.5rem;
+  margin: 0.1rem;
+  /* text-decoration: none; */
+}
+
 header h1{
+  position: absolute;
   font-size: 5rem;
   font-family: 'Header';
+  align-self: center;
+  /* margin-top: 1rem; */
 }
 
 section{

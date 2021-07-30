@@ -1,5 +1,7 @@
+import {createHeader, createFooter} from './footer-header'
 
-export function createHome(){
+//creates HOME section
+function createHome(){
 
   const home = document.createElement('section');
 
@@ -18,16 +20,26 @@ export function createHome(){
   home.appendChild(p2);
   home.appendChild(p3);
 
+  const homeBtn = document.querySelector('li[id="homeBtn"]');
+  const menuBtn = document.querySelector('li[id="menuBtn"]');
+  const contactBtn = document.querySelector('li[id="contactBtn"]');
+  homeBtn.classList.add('active');
+  menuBtn.classList.remove('active');
+  contactBtn.classList.remove('active');
+
   return home;
 }
 
+//loads full page with HOME section
 export function loadHome(){
-  const content = document.getElementById('content');
 
-  //const section1 = document.querySelectorAll('section');
-  //content.textContent = '';
-  //content.removeChild(section1);
+  const content = document.querySelector('div[id="content"]');
+  content.innerHTML = '';
+
+  content.appendChild(createHeader());
   content.appendChild(createHome());
+  content.appendChild(createFooter());
+
 }
 
-// export default loadHome;
+export default loadHome;

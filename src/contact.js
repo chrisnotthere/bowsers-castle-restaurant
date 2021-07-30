@@ -1,3 +1,5 @@
+import {createHeader, createFooter} from './footer-header'
+
 function createContact(){
 
     const contact = document.createElement('section');
@@ -19,7 +21,25 @@ function createContact(){
     contact.appendChild(address);
     contact.appendChild(location);
 
+    const homeBtn = document.querySelector('li[id="homeBtn"]');
+    const menuBtn = document.querySelector('li[id="menuBtn"]');
+    const contactBtn = document.querySelector('li[id="contactBtn"]');
+    homeBtn.classList.remove('active');
+    menuBtn.classList.remove('active');
+    contactBtn.classList.add('active');
+
     return contact;
 }
 
-export default createContact;
+function loadContact(){
+
+    const content = document.querySelector('div[id="content"]');
+    content.innerHTML = '';
+
+    content.appendChild(createHeader());
+    content.appendChild(createContact());
+    content.appendChild(createFooter());
+
+}
+
+export default loadContact;
